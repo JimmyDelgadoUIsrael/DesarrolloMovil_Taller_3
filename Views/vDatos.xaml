@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="jdelgadoT3.Views.vDatos"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="vDatos">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+
+            <!--  Estilo explícito para Label de títulos  -->
+            <Style x:Key="TituloLabel" TargetType="Label">
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="FontSize" Value="24" />
+                <Setter Property="TextColor" Value="DarkRed" />
+                <Setter Property="HorizontalOptions" Value="Center" />
+            </Style>
+
+            <!--  Estilo explícito para Label de datos  -->
+            <Style x:Key="DatosLabel" TargetType="Label">
+                <Setter Property="FontSize" Value="18" />
+                <Setter Property="TextColor" Value="Aqua" />
+            </Style>
+
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="15">
+            <Label Style="{StaticResource TituloLabel}" Text="Información Registrada" />
+
+            <Label x:Name="lblTipoId" HorizontalTextAlignment="Center" />
+            <Label x:Name="lblIdentificacion" HorizontalTextAlignment="Center" />
+            <Label x:Name="lblNombres" HorizontalTextAlignment="Center" />
+            <Label x:Name="lblApellidos" HorizontalTextAlignment="Center" />
+            <Label x:Name="lblFecha" HorizontalTextAlignment="Center" />
+            <Label x:Name="lblCorreo" HorizontalTextAlignment="Center" />
+            <Label x:Name="lblSalario" HorizontalTextAlignment="Center" />
+            <Label
+                x:Name="lblAporteIESS"
+                HorizontalTextAlignment="Center"
+                Style="{StaticResource DatosLabel}" />
+
+            <Button Clicked="btnExportar_Clicked" Text="Exportar a archivo" />
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

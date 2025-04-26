@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="jdelgadoT3.Views.vRegistro"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="vRegistro">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+
+            <!--  Estilo implícito para todos los Button  -->
+            <Style TargetType="Button">
+                <Setter Property="Background" Value="ForestGreen" />
+            </Style>
+
+            <!--  Estilo implícito para todos los Entry  -->
+            <Style TargetType="Entry">
+                <Setter Property="BackgroundColor" Value="MediumAquamarine" />
+                <Setter Property="FontSize" Value="16" />
+            </Style>
+
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="20">
+            <Label
+                FontSize="25"
+                HorizontalOptions="Center"
+                Text="REGISTRO DE CONTACTOS"
+                TextColor="Red"
+                VerticalOptions="Center" />
+            <Label
+                FontSize="10"
+                HorizontalOptions="Center"
+                Text="By: Jimmy Delgado"
+                VerticalOptions="Center" />
+
+            <Picker x:Name="pckTipoIden" Title="Tipo de Identificación">
+                <Picker.Items>
+                    <x:String>CI</x:String>
+                    <x:String>RUC</x:String>
+                    <x:String>Pasaporte</x:String>
+                </Picker.Items>
+            </Picker>
+            <Entry
+                x:Name="txtIdentificación"
+                Keyboard="Numeric"
+                Placeholder="Ingrese la identificación"
+                TextChanged="txtIdentificación_TextChanged" />
+            <Entry x:Name="txtNombres" Placeholder="Ingrese sus Nombres" />
+            <Entry x:Name="txtApellidos" Placeholder="Ingrese sus Apellidos" />
+            <DatePicker
+                x:Name="dtpckDate"
+                Format="dd/MM/yyyy"
+                HorizontalOptions="FillAndExpand" />
+            <Entry
+                x:Name="txtCorreo"
+                Keyboard="Email"
+                Placeholder="Ingrese su Correo" />
+            <Entry
+                x:Name="txtSalario"
+                Keyboard="Numeric"
+                Placeholder="Ingrese su Salario" />
+
+            <Button
+                x:Name="btnRegistrar"
+                Clicked="btnRegistrar_Clicked"
+                Text="Registrar" />
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
